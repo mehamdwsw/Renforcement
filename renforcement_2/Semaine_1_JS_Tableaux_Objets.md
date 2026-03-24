@@ -16,7 +16,7 @@ Tu gères les inscriptions à un événement. Crée un tableau contenant 6 noms 
 
 ## S-Challenge 2 — Le relevé de notes
 
-Un professeur te donne les notes de 7 élèves dans un tableau : `[12, 8, 15, 6, 18, 9, 14]`. Parcours ce tableau et calcule : la somme de toutes les notes, la moyenne de la classe, la note la plus haute, la note la plus basse, le nombre d'élèves qui ont la moyenne (≥ 10). Affiche un bulletin de résultats formaté.
+Un professeur te donne les notes de 7 élèves dans un tableau : `[12, 8, 15, 6, 18, 9, 14]`. Parcours ce tableau et calcule : la somme de toutes les notes, la moyenne de la classe, la note     la plus haute, la note la plus basse, le nombre d'élèves qui ont la moyenne (≥ 10). Affiche un bulletin de résultats formaté.
 
 ---
 
