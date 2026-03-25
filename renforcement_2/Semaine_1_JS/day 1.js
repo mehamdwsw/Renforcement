@@ -44,11 +44,23 @@ fid.forEach((element) => {
   console.log(element);
 });
 // Challenge 3
-let obj={
-    nom:'ahmed',
-    prenom:'dift',
-    âge:20,
-    email:"ahmed@gmail.com",
-    ville :"dakhla",
-}
+let obj = [
+  {
+    nom: "ahmed",
+    prenom: "dift",
+    âge: 20,
+    email: "ahmed@gmail.com",
+    ville: "dakhla",
+  },
+  {
+    nom: "ftrd",
+    prenom: "dd",
+    âge: 22,
+    email: "ds@gmail.com",
+    ville: "sssdd",
+  },
+];
 
+Object.values(obj).forEach((element) => {
+  console.log(element);
+});
