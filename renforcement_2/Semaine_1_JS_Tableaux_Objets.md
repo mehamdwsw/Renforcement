@@ -28,9 +28,9 @@ Crée un objet représentant une personne avec ses informations : nom, prénom, 
 
 ## S-Challenge 4 — Le ticket de caisse
 
-Tu travailles à la caisse d'un magasin. Crée un tableau de 5 articles achetés, chaque article est un objet avec un nom, une quantité et un prix unitaire. Affiche chaque ligne du ticket sous la forme "Lait x2 = 3.00€". Calcule et affiche le sous-total, la TVA (20%) et le total TTC.
+    Tu travailles à la caisse d'un magasin. Crée un tableau de 5 articles achetés, chaque article est un objet avec un nom, une quantité et un prix unitaire. Affiche chaque ligne du ticket sous la forme "Lait x2 = 3.00€". Calcule et affiche le sous-total, la TVA (20%) et le total TTC.
 
----
+    ---
 
 ## S-Challenge 5 — Le trombinoscope
 
