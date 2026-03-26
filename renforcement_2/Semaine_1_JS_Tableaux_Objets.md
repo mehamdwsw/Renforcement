@@ -58,7 +58,7 @@ Tu développes un lecteur de musique. Tu as un tableau de 10 chansons (chaque ch
 5. Trouve la chanson la plus longue
 6. Vérifie si toutes les chansons durent moins de 6 minutes
 7. Vérifie si au moins une chanson est du genre "Jazz"
-8. Trie les chansons par durée, de la plus courte à la plus longue
+8. Trie les chansons par durée, de la plus courte à la plus longue+
 
 ---
 
