@@ -195,13 +195,13 @@ let data = [
     mois: 10,
     chiffre_affaires: 9000,
     nb_clients: 150,
-    ville: "agdir",
+    ville: "taza",
   },
   {
     mois: 11,
     chiffre_affaires: 55000,
     nb_clients: 180,
-    ville: "dakhla",
+    ville: "taza",
   },
   {
     mois: 12,
@@ -224,11 +224,193 @@ let clients = data.sort((a, b) => a.nb_clients - b.nb_clients);
 console.log(clients[data.length - 1]);
 let depasse_50000 = data.filter((element) => element.chiffre_affaires >= 50000);
 console.log(depasse_50000);
-let obj={};
+let obj = {};
 data.forEach((element, i) => {
   if (!obj[element.ville]) {
     obj[element.ville] = 0;
   }
   obj[element.ville] += 1;
 });
-console.log(Object.keys(obj));
+let resume = Object.keys(obj);
+let test = [];
+resume.forEach((element) => {
+  data.forEach((element_data) => {
+    if (test[element] == null) {
+      test[element] = {
+        city: element,
+        clients: 0,
+        CA_total: 0,
+      };
+    }
+    if (element_data.ville == element) {
+      test[element].clients += element_data.nb_clients;
+      test[element].CA_total += element_data.chiffre_affaires;
+    }
+  });
+});
+console.log(test);
+console.log("------------------------------------------------------------");
+data.sort((b, a) => a.chiffre_affaires - b.chiffre_affaires);
+console.log(data);
+data.sort((a, b) => a.mois - b.mois);
+let final = Object;
+for (i = 0; i < 11; i++) {
+  final[data[i].mois + ":" + (data[i].mois + 1)] =
+    data[i].chiffre_affaires - data[i + 1].chiffre_affaires + "DH";
+}
+
+console.log(final);
+// ## R-Challenge 3 — Le système de notation 🔥
+
+// Un site web de recettes a un tableau d'avis utilisateurs (pseudo, note de 1 à 5, commentaire, date). Tu as 15 avis.
+
+// 1. Calcule la note moyenne arrondie à 1 décimale
+// 2. Compte combien d'avis par note (combien de 1 étoile, combien de 2 étoiles, etc.)
+// 3. Filtre les avis positifs (≥ 4) et les avis négatifs (≤ 2)
+// 4. Trie les avis du plus récent au plus ancien
+// 5. Trouve l'avis le plus long (en nombre de caractères dans le commentaire)
+// 6. Crée un résumé : "4.2/5 basé sur 15 avis — 8 positifs, 3 négatifs, 4 neutres"
+let notation = [
+  {
+    pseudo: "ahmed",
+    note: 3,
+    commentaire: "godd bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 1,
+    commentaire: "ff",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 2,
+    commentaire: "good bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 1,
+    commentaire: "f bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 2,
+    commentaire: "goodd bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 5,
+    commentaire: "df bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "googfd bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 3,
+    commentaire: "goodddd bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "gooddd bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 5,
+    commentaire: "gfggood bro",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "good dfgdfgfdg",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "good brfgfdgo",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "good dfgd",
+    date: "3/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 4,
+    commentaire: "good brofd",
+    date: "1/26/2026",
+  },
+  {
+    pseudo: "ahmed",
+    note: 2.5,
+    commentaire: "goofffffffffdhg",
+    date: "2/26/2026",
+  },
+];
+let moyenne = 0;
+let b = notation.reduce((element) => {
+  moyenne += element.note;
+  return element;
+});
+console.log("moyenne: " + moyenne / notation.length + " star");
+let combien = Array;
+notation.forEach((element) => {
+  if (combien[element.note] == null) {
+    combien[element.note] = 0;
+  } else {
+    combien[element.note] = combien[element.note] + 1;
+  }
+});
+console.log(combien);
+let filter = notation.filter(
+  (element) => (element.note <= 4) & (element.note >= 2),
+);
+console.log(filter);
+console.log("------------------------------------------------------------");
+
+notation.sort((a, b) => new Date(b.date) - new Date(a.date));
+console.log(notation);
+let long = notation[0].commentaire.length;
+let plus_long=[]
+notation.forEach((element, i) => {
+  if (element.commentaire.length > long) {
+    plus_long = element.commentaire;
+  }
+});
+
+console.log("commentaire: "+plus_long);
+let positifs=0;
+let negatifs=0;
+let neutres=0;
+notation.forEach(element => {
+  if(element.note>=4){
+  positifs++
+  }
+  if(element.note<=2){
+    negatifs++
+  }
+  if(element.note==2.5){
+    neutres++
+  }
+});
+
+
+
+
+
+console.log(moyenne/notation.length +"/5" +" basé sur "+notation.length+" avis"+"— "+positifs+" positifs, "+negatifs+" négatifs, "+neutres+" neutres");
